@@ -18,8 +18,9 @@ class StringBuilder {
   }
 
   padBoth(str) {
-    this.padStart(str);
-    this.padEnd(str);
+    if (this.#value.indexOf(str) === -1) {
+      this.#value = str + this.#value + str;
+    }
   }
 }
 
